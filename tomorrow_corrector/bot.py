@@ -16,8 +16,10 @@ def run_bot():
     comments = subreddit.get_comments(limit=25)
     for comment in comments:
         if any(string in comment.body.lower() for string in misspellings) and not comment.id in comment_cache:
+            print('Match found -- comment permalink:', comment.permalink)
             comment.reply('I think you meant "tomorrow".')
             comment_cache.append(comment.id)
+            print('Responded to comment')
 
 while True:
     run_bot()
