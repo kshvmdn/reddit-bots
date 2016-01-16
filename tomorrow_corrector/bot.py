@@ -1,4 +1,5 @@
 import praw, time
+# from tomorrow_corrector import *
 
 # replace with your username/password
 username, password = USERNAME, PASSWORD
