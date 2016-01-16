@@ -9,6 +9,9 @@ r.login(username, password, disable_warning=True)
 
 def run_bot():
     '''Check /r/all for mispellings in comments and reply to them.'''
+    subreddit = r.get_subreddit('all')
+    comments = subreddit.get_comments(limit=25)
+    for comment in comments:
 
 while True:
     run_bot()
