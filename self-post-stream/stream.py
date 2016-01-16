@@ -2,8 +2,8 @@ import praw
 import argparse
 
 parser = argparse.ArgumentParser(description='Stream self posts from any subreddit.')
-parser.add_argument('--sub', required=False, default='all', help='Subreddit name (default: `all`)')
-parser.add_argument('--limit', type=int, required=False, default=100, help='Post limit (default: 100)')
+parser.add_argument('-sub', required=False, default='all', help='Subreddit name (default=\'all\')')
+parser.add_argument('-limit', required=False, default=100, help='Post limit (default=100, max=1000)', type=int)
 args = parser.parse_args()
 
 r = praw.Reddit(user_agent='stream only self posts from a sub by /u/km97')
