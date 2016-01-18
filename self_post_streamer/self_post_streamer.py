@@ -8,7 +8,7 @@ parser.add_argument('-limit', required=False, default=100, help='Post limit (def
 args = parser.parse_args()
 args.limit = 1000 if args.limit > 1000 else args.limit
 
-r = praw.Reddit(user_agent='stream only self posts from a sub by /u/km97')
+r = praw.Reddit(user_agent='stream only self posts from a sub by /u/me')
 posts = [post for post in r.get_subreddit(args.sub).get_hot(limit=args.limit) if post.is_self]
 
 for post in posts:
